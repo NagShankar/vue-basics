@@ -23,13 +23,18 @@
             <h1>
                 Hello {{ message }}
             </h1>
+            <input v-model="message"/><br/><br/>
+            <div v-if="count === 1">im displayed when it is 1 - one</div>
+            <div v-else-if="count === 2">im displayed when it is 2 - two</div>
+            <div v-else>im displayed when nothing is right</div>
         </div>
         
         <script>
             const App = new Vue({
                 el: '#root',
                 data: {
-                message: 'Nag! Welcome to Vue wassup',
+                message: 'Nag! you purchased a new bike',
+                count: 2
                 },
             })
         </script>
