@@ -57,11 +57,27 @@
             <input v-model="newCat" @keyup.enter="addKitty"/> <!-- v-on: can be replaced with @ -->
             <button @click="addKitty">+ Add</button>
 
+            <!-- components-->
+            <cat-list :cats="cats"/>
+
         </div>
         
         <script>
+
+Vue.component('cat-list', {
+    props:['cats'],
+    template:` <ul>
+            <li v-for="cat in cats">{{cat}}</li>
+            </ul>
+    `
+    
+})
+
             const App = new Vue({
                 el: '#root',
+                component:[
+                    'cat-list'
+                ],
                 data: {
                     message: 'Nag! you purchased a new bike',
                     count: 2,
