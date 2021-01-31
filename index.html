@@ -111,8 +111,24 @@ Vue.component('cat-list', {
                             return this.newCat + ' lovely'
                         } 
                     } 
+                },
+                /*lifecycle methods*/
+                created: function(){
+                    console.log("created");
+                },
+                mounted: function(){
+                    console.log("mounted");
+                },
+                updated: function(){
+                    console.log("updated");
+                },
+                destroyed: function(){
+                    console.log("destroyed");
                 } 
             })
+            setTimeout(function(){
+                App.$destroy();
+            },5000);
         </script>
         
     </body>
