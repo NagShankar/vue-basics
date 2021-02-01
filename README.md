@@ -1,3 +1,1 @@
-# Vue Basics
-
-## adding basic vue file
+# Vue using CLI
